@@ -90,7 +90,7 @@ module Google
 
         # return the link tag
         options = {
-          :rel  => :stylesheet,
+          :rel  => 'stylesheet',
           :type => Mime::CSS,
           :href => "#{request_method}://fonts.googleapis.com/css?family=#{family}"
         }
