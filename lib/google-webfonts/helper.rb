@@ -7,7 +7,7 @@ module Google
       include ActionView::Helpers::TagHelper
 
       # Public: Generates a Google Webfonts link tag
-      # 
+      #
       # options - The font options. This can be a String, Symbol, or Hash, or
       #           a combination of all three. If you need to specify a font
       #           size, use a Hash, otherwise a String or Symbol will work.
@@ -16,17 +16,17 @@ module Google
       #
       #   google_webfonts_link_tag "Droid Sans"
       #   # => '<link href="http://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet" type="text/css" />'
-      # 
+      #
       #   google_webfonts_link_tag :droid_sans
       #   # => '<link href="http://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet" type="text/css" />'
-      # 
+      #
       #   google_webfonts_link_tag :droid_sans => [400, 700]
       #   # => '<link href="http://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet" type="text/css" />'
-      # 
+      #
       #   google_webfonts_link_tag :droid_sans => [400, 700],
       #                            :yanone_kaffeesatz => [300, 400]
       #   # => '<link href="http://fonts.googleapis.com/css?family=Droid+Sans:400,700|Yanone+Kaffeesatz:300,400" rel="stylesheet" type="text/css" />'
-      # 
+      #
       #   google_webfonts_link_tag "Droid Sans",
       #                            :yanone_kaffeesatz => 400
       #   # => '<link href="http://fonts.googleapis.com/css?family=Droid+Sans|Yanone+Kaffeesatz:400" rel="stylesheet" type="text/css" />'
@@ -91,7 +91,7 @@ module Google
         # return the link tag
         options = {
           :rel  => 'stylesheet',
-          :type => Mime::CSS,
+          :type => Mime::CSS.to_s,
           :href => "#{request_method}://fonts.googleapis.com/css?family=#{family}"
         }
         tag 'link', options, false, false
